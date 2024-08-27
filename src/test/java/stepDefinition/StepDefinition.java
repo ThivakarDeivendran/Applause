@@ -111,5 +111,35 @@ public class StepDefinition extends  ReusableMethod{
 		clickMethod(pageObjectVariable.getClearAllFiltersButton());
 		staticWaitMethod(3000);
 	}
+	
+	@Given("User select the Gift in the highlights dropdown")
+	public void user_select_the_gift_in_the_highlights_dropdown() {
+		executeScriptScrollToElement(pageObjectVariable.getProductOverView());
+		staticWaitMethod(3000);
+		clickMethod(pageObjectVariable.getHighlightsDropdown());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getGiftCheckBox());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getSubmitButton());
+		staticWaitMethod(2000);
+		softAssert.assertTrue(isdisplayedMethod(pageObjectVariable.getTickMark()));
+	}
+	@When("User Enter the ProductTypeName in the productTypedropdown")
+	public void user_enter_the_product_type_name_in_the_product_typedropdown() {
+		clickMethod(pageObjectVariable.getProductTypeDropdown());
+		staticWaitMethod(3000);
+		staticWaitMethod(3000);
+		sendKeysMethod(pageObjectVariable.getBrandTextBox(),readPropertyFile("ProductType"));
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getFirstElementCheckBox());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getSubmitButton());
+		staticWaitMethod(2000);
+		softAssert.assertTrue(isdisplayedMethod(pageObjectVariable.getTickMark()));	
+	}
+	@And("User Close the Browser")
+	public void user_close_the_browser() {
+		browserQuitMethod();
+	}
 
 }

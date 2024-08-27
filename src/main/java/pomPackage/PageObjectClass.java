@@ -46,6 +46,14 @@ public class PageObjectClass {
 		return saleCheckBox;
 	}
 	
+	@FindBy(xpath="//*[text()='Gift']/ancestor::a//input")
+	private WebElement giftCheckBox;
+	
+	public WebElement getGiftCheckBox() {
+		return giftCheckBox;
+	}
+
+
 	@FindBy(xpath="//font[contains(text(),'Show')]/ancestor::button")
 	private WebElement submitButton;
 
