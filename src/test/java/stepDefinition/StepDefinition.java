@@ -60,6 +60,31 @@ public class StepDefinition extends  ReusableMethod{
 		staticWaitMethod(2000);
 		softAssert.assertTrue(isdisplayedMethod(pageObjectVariable.getTickMark()));
 	}
+	@Given("User select the Limited from the highlights dropdown")
+	public void user_select_the_limited_from_the_highlights_dropdown() {
+		executeScriptScrollToElement(pageObjectVariable.getProductOverView());
+		staticWaitMethod(4000);
+		clickMethod(pageObjectVariable.getHighlightsDropdown());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getLimitedCheckBox());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getSubmitButton());
+		staticWaitMethod(2000);
+		softAssert.assertTrue(isdisplayedMethod(pageObjectVariable.getTickMark()));
+	}
+	@When("User Enter the brand NameLimited in the brand dropdown")
+	public void user_enter_the_brand_name_limited_in_the_brand_dropdown() {
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getBrandDropDown());
+		staticWaitMethod(3000);
+		sendKeysMethod(pageObjectVariable.getBrandTextBox(),readPropertyFile("BrandLimited"));
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getFirstElementCheckBox());
+		staticWaitMethod(2000);
+		clickMethod(pageObjectVariable.getSubmitButton());
+		staticWaitMethod(2000);
+		softAssert.assertTrue(isdisplayedMethod(pageObjectVariable.getTickMark()));
+	}
 
 	@When("User Enter the brand Name in the brand dropdown")
 	public void user_enter_the_brand_name_in_the_brand_dropdown() {

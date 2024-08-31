@@ -53,6 +53,14 @@ public class PageObjectClass {
 		return giftCheckBox;
 	}
 
+	@FindBy(xpath="//*[text()='Limited']/ancestor::a//input")
+	private WebElement limitedCheckBox;
+	
+
+	public WebElement getLimitedCheckBox() {
+		return limitedCheckBox;
+	}
+
 
 	@FindBy(xpath="//font[contains(text(),'Show')]/ancestor::button")
 	private WebElement submitButton;
